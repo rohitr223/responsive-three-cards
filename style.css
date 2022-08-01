@@ -1,0 +1,81 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+.container{
+    margin-top: 100px;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+}
+
+.col{
+    flex: 33.33%;
+    margin: 20px;
+}
+
+.card{
+    border: 1px solid #000;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #efefef;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.card h3{
+    margin: 10px;
+}
+
+.card p{
+    margin: 10px;
+}
+
+.card button{
+    margin: 10px;
+    color: white;
+    background-color: rgb(56, 157, 245);
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+
+/* Styling image */
+.card img{
+    /* 
+        We are using pixels for image height and percentage for image width
+        bcoz the image should align perfectly at the canter of the 'col' container
+        for all screen sizes.
+     */
+    height: 300px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* For small screen devices less than 780px */
+@media screen and (max-width:780px){
+    .row{
+        flex-direction: column;
+    }
+    
+    .col{
+        /* 
+            Width is given "100%" for small screen devices because
+            the card content should be perfectly aligned in center of the
+            the small screen devices in the form of a "row".
+        */
+        width: 100%
+    }
+
+    .card{
+        /* 
+            Width is less than "col" because the "card" class is 
+            located inside the "col" class and the width should be less than "100%" 
+        */
+        width: 80%;
+    }
+}
